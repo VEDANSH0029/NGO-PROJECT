@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | HopeConnect NGO</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><nav class="navbar"><a class="brand" href="index.html">HopeConnect NGO</a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="volunteer.html">Volunteer</a><a href="events.html">Events</a><a href="donate.html" aria-current="page">Donate</a><a href="impact.html">Impact</a><a href="admin.html">Admin</a></div></nav></header>
+<main class="checkout-page">
+  <div class="checkout-heading"><span class="demo-label">STUDENT DEMO · NO REAL PAYMENTS</span><h1>Make a difference today</h1><p>Choose how you'd like to support our community programs.</p></div>
+  <form id="donationForm" class="checkout-layout">
+    <div class="checkout-main">
+      <section class="checkout-panel"><h2><span class="step">1</span> Choose donation amount</h2><p class="muted">Select an amount or enter your own.</p>
+        <div class="amount-grid"><button type="button" class="amount-choice" data-amount="100">₹100</button><button type="button" class="amount-choice selected" data-amount="500">₹500</button><button type="button" class="amount-choice" data-amount="1000">₹1,000</button><button type="button" class="amount-choice" data-amount="2000">₹2,000</button></div>
+        <label for="donationAmount" class="field-label">Donation amount (₹)</label><input id="donationAmount" type="number" min="1" max="1000000" step="1" value="500" required>
+      </section>
+      <section class="checkout-panel"><h2><span class="step">2</span> Your details</h2>
+        <div class="field-grid"><div><label for="donorName" class="field-label">Full name</label><input id="donorName" maxlength="80" placeholder="Your name" required></div><div><label for="donorEmail" class="field-label">Email address</label><input id="donorEmail" type="email" placeholder="you@example.com" required></div></div>
+        <label for="donorMessage" class="field-label">Message (optional)</label><textarea id="donorMessage" rows="3" maxlength="250" placeholder="A message of support..."></textarea>
+      </section>
+      <section class="checkout-panel"><h2><span class="step">3</span> Select payment method</h2><p class="muted">Explore the payment experience. No bank or payment app is contacted.</p>
+        <div class="payment-tabs" role="radiogroup" aria-label="Payment method">
+          <label class="payment-tab"><input type="radio" name="method" value="upi" checked><span>📱 UPI Apps</span></label>
+          <label class="payment-tab"><input type="radio" name="method" value="qr"><span>▦ Scan QR</span></label>
+          <label class="payment-tab"><input type="radio" name="method" value="card"><span>💳 Card</span></label>
+        </div>
+        <div id="upiPanel" class="payment-detail"><h3>Choose your UPI app</h3><div class="app-grid"><label><input type="radio" name="upiApp" value="Google Pay" checked><span>G</span> Google Pay</label><label><input type="radio" name="upiApp" value="PhonePe"><span>P</span> PhonePe</label><label><input type="radio" name="upiApp" value="Paytm"><span>₹</span> Paytm</label><label><input type="radio" name="upiApp" value="BHIM"><span>B</span> BHIM</label></div><p class="muted small">In a real website, a verified payment gateway would open your chosen app.</p></div>
+        <div id="qrPanel" class="payment-detail" hidden><h3>Scan & pay (visual demo)</h3><div class="qr-demo" aria-label="Decorative QR placeholder, not scannable"><div class="qr-corner top-left"></div><div class="qr-corner top-right"></div><div class="qr-corner bottom-left"></div><div class="qr-center">DEMO</div></div><p class="muted">This is a QR-style placeholder, not a real payment QR code.</p><div class="upi-copy"><code id="demoUpi">demo@not-a-real-upi</code><button type="button" id="copyUpi" class="outline-btn">Copy demo ID</button></div><p id="copyMessage" class="muted small" role="status"></p></div>
+        <div id="cardPanel" class="payment-detail" hidden><h3>Debit / credit card</h3><p class="muted">For safety, this prototype does not ask for card numbers, expiry dates, or CVV. A real checkout would use a payment provider's secure card form.</p><div class="card-placeholder">💳 &nbsp; Secure card form available after gateway integration</div></div>
+      </section>
+    </div>
+    <aside class="checkout-panel order-summary"><h2>Donation summary</h2><div class="summary-line"><span>Donation</span><strong id="summaryAmount">₹500</strong></div><div class="summary-line"><span>Platform fee</span><strong>₹0</strong></div><hr><div class="summary-line summary-total"><span>Total</span><strong id="summaryTotal">₹500</strong></div><p class="summary-method">Method: <strong id="summaryMethod">Google Pay (UPI)</strong></p><button type="submit" class="btn checkout-submit">Preview donation · <span id="buttonAmount">₹500</span></button><p class="muted small">🔒 Demo only. Clicking the button records a simulated pledge in your browser. No money is transferred.</p></aside>
+  </form>
+  <section id="donationResult" class="result-panel" hidden role="status"><div class="result-icon">✓</div><h2>Demo pledge recorded!</h2><p id="resultText"></p><p>No payment was made. This is a simulated confirmation for your college project.</p><button id="newDonation" class="outline-btn" type="button">Make another demo pledge</button></section>
+</main>
+<footer><h3>HopeConnect NGO</h3><p>NGO Digital Outreach &amp; Support Management System</p><p>3rd Semester Educational Prototype · No real payments</p></footer>
+<script src="script.js"></script>
+</body></html>
